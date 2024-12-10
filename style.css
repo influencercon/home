@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f4f4f4;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --accent-primary: #6366f1;
+    --accent-secondary: #4f46e5;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --border-color: #dddddd;
+}
+
+.dark {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #242424;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --accent-primary: #818cf8;
+    --accent-secondary: #6366f1;
+    --card-bg: #2d2d2d;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --border-color: #404040;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-toggle button {
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    background: var(--card-bg);
+    cursor: pointer;
+    box-shadow: 0 2px 4px var(--card-shadow);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.title-container {
+    padding: 60px 0;
+    position: relative;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.title-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.title-decoration {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.8) 20%, 
+        rgba(255, 255, 255, 0.8) 80%, 
+        transparent 100%
+    );
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 span {
+    color: #FFD700;
+    font-weight: 400;
+}
+
+.countdown-container {
+    padding: 40px 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.countdown div {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 100px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.countdown span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    display: block;
+    color: #FFD700;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.countdown label {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.description {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+    box-shadow: 0 2px 4px var(--card-shadow);
+}
+
+.description h2 {
+    margin-bottom: 20px;
+    color: var(--accent-primary);
+}
+
+.description p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.charity-section p {
+    margin-bottom: 20px;
+}
+
+.charity-section p:last-child {
+    margin-bottom: 0;
+}
+
+.guests {
+    margin-bottom: 40px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--accent-primary);
+}
+
+.guest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.guest-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px var(--card-shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.guest-card:hover {
+    transform: translateY(-5px);
+}
+
+.guest-image {
+    width: 100%;
+    height: 300px;
+    background-color: var(--bg-secondary);
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.guest-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.guest-card:hover .guest-image img {
+    transform: scale(1.05);
+}
+
+.guest-card h3 {
+    color: var(--accent-primary);
+    margin-bottom: 10px;
+}
+
+.guest-card h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.guest-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.profession {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.schedule {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px var(--card-shadow);
+    margin-bottom: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--accent-secondary);
+    color: white;
+}
+
+tr:hover {
+    background-color: var(--bg-secondary);
+}
+
+.footer {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px var(--card-shadow);
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.footer-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.footer-credits {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-credits p {
+    margin-bottom: 10px;
+}
+
+.footer-credits a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.footer-credits a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    .guest-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    h1 {
+        font-size: 3.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    .countdown div {
+        min-width: 70px;
+        padding: 15px;
+    }
+
+    .countdown span {
+        font-size: 1.8em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .guest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .description {
+        padding: 20px;
+    }
+
+    .footer {
+        padding: 20px;
+    }
+}
